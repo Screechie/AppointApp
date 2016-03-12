@@ -21,17 +21,17 @@ app.get('/index', function(req, res){
 	console.log("Visited the index page!");
 });
 
-app.get('/patients', function(req, res){
-	console.log('Visited the patient log in page');
-	//res.sendFile(root + '/public/views/view.html');
-	res.status(302).redirect("/index.html#patients");
-});
+// app.get('/patients', function(req, res){
+// 	console.log('Visited the patient log in page');
+// 	//res.sendFile(root + '/public/views/view.html');
+// 	res.status(302).redirect("/view.html#patients");
+// });
 
-app.get('/doctors', function(req, res){
-	console.log('Visited the patient log in page');
-	//res.sendFile(root + '/public/views/view.html');
-	res.status(302).redirect("/index.html#doctors");
-});
+// app.get('/doctors', function(req, res){
+// 	console.log('Visited the patient log in page');
+// 	//res.sendFile(root + '/public/views/view.html');
+// 	res.status(302).redirect("/view.html#doctors");
+// });
 
 app.listen(8080, function(){
 	console.log("App listening on port 8080:");
