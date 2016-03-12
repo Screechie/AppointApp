@@ -9,6 +9,17 @@ $(function() {
 
 	var html = {};
 
+	var Doctor = function(){
+		//Grab variables from form
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = username;
+		this.dob = dob;
+		this.sex = sex;
+		this.title = title;
+		this.specialty = specialty;
+	};
+
 	//==========================================View Templates=================================================
 
 	//Header template
@@ -32,7 +43,7 @@ $(function() {
 			'<!-- Collect the nav links, forms, and other content for toggling -->',
 			'<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">',
 				'<ul class="nav navbar-nav">',
-					'<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>',
+					'<li class="active"><a class="links" href="#index">Home <span class="sr-only">(current)</span></a></li>',
 					'<li><a href="#">Calendar</a></li>',
 				'</ul>',
 
@@ -62,20 +73,20 @@ $(function() {
 
 			'<div class="jumbotron">',
 			'<h1>Welcome to AppointApp!!</h1>',
-			'<p>Register or click the relevant link below to login. Patients may schedule appointments remotely with a Doctor. Doctors can also view scheduled appointments or make appointments to see other physicians!</p>',
+			'<p>Click the relevant link below to login or register. Patients may schedule appointments remotely with a Doctor. Doctors can also view scheduled appointments or make appointments to see other physicians!</p>',
 			'</div>',
 
 			'<div class="well col-md-6">',
-			'<a id="patbtn"class="btn btn-primary btn-md col-md-12 links " href="#patients" role="button">Patient Login</a>',
+			'<a id="patbtn"class="btn btn-primary btn-md col-md-12 links " href="#patients" role="button">Patients</a>',
 			'<br>',
 			'</div>',
 
 			'<div class="well col-md-6">',
-			'<a id="docbtn"class="btn btn-warning btn-md col-md-12 links" href="#doctors" role="button">Doctor Login</a>',
+			'<a id="docbtn" class="btn btn-warning btn-md col-md-12 links" href="#doctors" role="button">Doctors</a>',
 			'<br>',
 			'</div>',
 
-			'<a class="links" href="#register" role="button">Register!</a>	',
+			
 
 		'</div>	<!-- /Index -->'
 		],'');
@@ -90,32 +101,65 @@ $(function() {
 				'<!-- Patient Login Section -->',
 			'<div id="patients" class = "page">',
 
-			'<div class="alert alert-dismissible alert-success">',
-				'<button type="button" class="close" data-dismiss="alert"> &close; </button>',
-				'<strong>Welcome </strong>to the <a href="#" class="alert-link">patients </a>login area!',
+			'<br>',
+			'<br>',
+
+			'<div class="alert alert-dismissible alert-success col-md-6 col-md-offset-3">',
+				'<button type="button" class="close" data-dismiss="alert">&times;</button>',
+				'<strong>Welcome </strong>to the patients login area! New patients register <a href="#" class="alert-link">here </a>',
 			'</div>',
 
-				'<div class="form-group">',
-					'<label for="inputUser" class="col-md-6 control-label">Username</label>',
-					'<div class="col-md-6">',
-						'<input type="text" class="col-md-6 form-control" id="inputUser" placeholder="Username">',
+			'<br>',
+			'<br>',
+			'<br>',
+			'<br>',
+			
+			
+			'<div class="form-group">',
+				'<div class="row">',
+					'<div class="col-md-6 col-md-offset-3">',
+						'<input type="text" class="form-control" id="inputUser" placeholder="Username">',
 					'</div>',
 				'</div>',
 
-				'<div class="form-group">',
-					'<label for="inputPassword" class="col-md-2 control-label">Password</label>',
-						'<div class="col-md-10">',
-							'<input type="password" class="form-control" id="inputPassword" placeholder="Password">',
-							'<div class="col-md-4"></br>',
-		          	'<button type="submit" class="btn btn-primary">Login</button>',
-		          '</div></br>',
-							'<div class="checkbox">',
-								'<label>',
-									'<input type="checkbox">Remember me!',
-								'</label>',
-							'</div>',
+				'<div class="row">',
+					'<div class="col-md-4 col-md-offset-3">',
+						'<label for="inputUser" class="control-label ">Username</label>',
 					'</div>',
 				'</div>',
+
+				'<div class="row">',
+					'<div class="col-md-6 col-md-offset-3">',
+						'<input type="password" class="form-control" id="inputPassword" placeholder="Password">',
+					'</div>',
+				'</div>',	
+
+				'<div class="row">',
+					'<div class="col-md-6 col-md-offset-3">',
+						'<label for="inputPassword" class="control-label">Password</label>',
+					'</div>',
+				'</div>',	
+			'</div>',
+
+			'<br>',
+
+			'<div class="row">',
+
+				'<div class="col-md-1 col-md-offset-3">',
+					'<button type="submit" class="btn btn-primary">Login</button>',
+				'</div>',
+
+				'<div class="checkbox col-md-2 move-checkbox">',
+					'<label>',
+						'<input type="checkbox">Remember me!',
+					'</label>',
+				'</div>',
+
+				'<div class="col-md-1 col-md-offset-1 move-register">',
+					'<button type="submit" class="btn btn-primary links" href="#register">Register</button>',
+				'</div>',
+
+			'</div>',
 
 			'</div> <!-- /#patients -->'
 			],'');
@@ -127,40 +171,81 @@ $(function() {
 	html.docLogTemplate = function(){
 
 		var docLogString = _.join([
-			'<!-- Doctor Login Section -->',
-			'<div id="doctors" class = "page">',
+		'<!-- Doctor Login Section -->',
+		'<div id="doctors" class = "page">',
 
-			'<div class="alert alert-dismissible alert-warning">',
-				'<button type="button" class="close" data-dismiss="alert"> &close; </button>',
-				'<strong>Welcome </strong>to the <a href="#" class="alert-link">doctors </a>login area!',
+			'<br>',
+			'<br>',
+
+			'<div class="alert alert-dismissible alert-warning col-md-6 col-md-offset-3">',
+				'<button type="button" class="close" data-dismiss="alert"> &times; </button>',
+				'<strong>Welcome </strong>to the doctors login area! New doctors register <a href="#" class="alert-link">here </a>',
 			'</div>',
 
-				'<div class="form-group">',
-					'<label for="inputUser" class="col-md-6 control-label">Username</label>',
-					'<div class="col-md-6">',
-						'<input type="text" class="col-md-6 form-control" id="inputUser" placeholder="Username">',
+			'<br>',
+			'<br>',
+			'<br>',
+			'<br>',
+			
+			
+			'<div class="form-group">',
+				'<div class="row">',
+					'<div class="col-md-6 col-md-offset-3">',
+						'<input type="text" class="form-control" id="inputUser" placeholder="Username">',
 					'</div>',
 				'</div>',
 
-				'<div class="form-group">',
-					'<label for="inputPassword" class="col-md-2 control-label">Password</label>',
-						'<div class="col-md-10">',
-							'<input type="password" class="form-control" id="inputPassword" placeholder="Password">',
-							'<div class="col-md-4"></br>',
-		          	'<button type="submit" class="btn btn-primary">Login</button>',
-		          '</div></br>',
-							'<div class="checkbox">',
-								'<label>',
-									'<input type="checkbox">Remember me!',
-								'</label>',
-							'</div>',
+				'<div class="row">',
+					'<div class="col-md-4 col-md-offset-3">',
+						'<label for="inputUser" class="control-label ">Username</label>',
 					'</div>',
 				'</div>',
-			'</div> <!-- /#doctors -->'
+
+				'<div class="row">',
+					'<div class="col-md-6 col-md-offset-3">',
+						'<input type="password" class="form-control" id="inputPassword" placeholder="Password">',
+					'</div>',
+				'</div>',	
+
+				'<div class="row">',
+					'<div class="col-md-6 col-md-offset-3">',
+						'<label for="inputPassword" class="control-label">Password</label>',
+					'</div>',
+				'</div>',	
+			'</div>',
+
+			'<br>',
+
+			'<div class="row">',
+
+				'<div class="col-md-1 col-md-offset-3">',
+					'<button type="submit" class="btn btn-primary">Login</button>',
+				'</div>',
+
+				'<div class="checkbox col-md-2 move-checkbox">',
+					'<label>',
+						'<input type="checkbox">Remember me!',
+					'</label>',
+				'</div>',
+
+				'<div class="col-md-1 col-md-offset-1 move-register">',
+					'<button type="submit" class="btn btn-primary links" href="#register">Register</button>',
+				'</div>',
+			'</div>',
+
+		'</div> <!-- /#doctors -->'
 			],'');
 		
 		return docLogString;
 	}
+
+	//Registration Form Template
+	html.registerTemplate = function(){
+
+	}
+
+//===================================End of Template Section==========================================
+
 
 	//Append html templates to div tag created with container id
 

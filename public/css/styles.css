@@ -1,0 +1,18 @@
+.jumbotron{
+	background-color: #CFD8DC;
+}
+
+.move-register{
+	position: relative;
+	left: 40px;
+}
+
+.move-checkbox{
+	position: relative;
+	left: 10px;
+	top: -3px;
+}
+
+/*.jumbotron h1{
+	color: white;
+}*/
