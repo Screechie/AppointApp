@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale = 1">
 	<title>Appointment App</title>
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
 	<link rel="stylesheet" href="/public/css/styles.css">
 </head>
 
@@ -15,84 +16,88 @@
 	
 
 	<div id="register" class="page">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<input type="text" class="form-control" id="fname" placeholder="First Name">
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<label for="fname" class="control-label">First Name</label>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<input type="text" class="form-control" id="lname" placeholder="Last Name">
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<label for="lname" class="control-label">Last Name</label>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<input type="text" class="form-control" id="uname" placeholder="Username">
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<label for="uname" class="control-label">Username</label>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<input type="password" class="form-control" id="password" placeholder="Password">
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<label for="password" class="control-label">Password</label>
-			</div>
-		</div>
 
 		<br>
+		<br>
 
-		<div class="form-group">
+		<div class="alert alert-dismissible alert-info col-md-8 col-md-offset-2">
+				<button type="button" class="close" data-dismiss="alert"></button>
+				<center><strong>Registration</strong></center>
+		</div>
+		
+		<form role="form">
+
+			<div class="formgroup">
+				<div class="col-md-8 col-md-offset-2">
+					<input type="text" class="form-control" id="fname" placeholder="First Name">
+				</div>
+				<div class="col-md-8 col-md-offset-2">
+					<label for="fname" class="control-label">First Name</label>
+				</div>
+			</div>			
+	
+
+			<div class="formgroup">
+				<div class="col-md-8 col-md-offset-2">
+					<input type="text" class="form-control" id="lname" placeholder="Last Name">
+				</div>
+				<div class="col-md-8 col-md-offset-2">
+					<label for="lname" class="control-label">Last Name</label>
+				</div>
+			</div>
+
 			
-			<div class="row">
-				<label class="col-md-2 col-md-offset-2 control-label">Sex</label>				
+
+			<div class="formgroup">
+				<div class="col-md-8 col-md-offset-2">
+					<input type="text" class="form-control" id="uname" placeholder="Username">
+				</div>
+				<div class="col-md-8 col-md-offset-2">
+					<label for="uname" class="control-label">Username</label>
+				</div>
 			</div>
 
-			<div class="row">
+			
+
+			<div class="formgroup">
+				<div class="col-md-8 col-md-offset-2">
+					<input type="password" class="form-control" id="password" placeholder="Password">
+				</div>
+				<div class="col-md-8 col-md-offset-2">
+					<label for="password" class="control-label">Password</label>
+				</div>
+			</div>			
+
+			<br>
+			<br>
+			<br>
+			<br>
+
+			<div class="form-group">
+
+				<div class="col-md-2 col-md-offset-2">
+					<label class="control-label">Sex</label>				
+				</div>
+
+			
+					<div class="radio col-md-2 col-md-offset-2">
+						<label>
+						<input type="radio" name="sexOption1" id="male" value="option1" checked="">
+						Male
+						</label>
+					</div>
 				
-			</div>
-      
-      <div class="col-md-10">
-        <div class="radio">
-         <label>
-         	<input type="radio" name="sexOption1" id="male" value="option1" checked="">
-         	Male
-         </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="sexOption2" id="female" value="option2">
-            Female
-          </label>
-        </div>
-      </div>
-    </div>
 
-
-
+				<div class="row">
+					<div class="radio col-md-2 col-md-offset-2">
+	          <label>
+	            <input type="radio" name="sexOption2" id="female" value="option2">
+	            Female
+	          </label>
+	        </div>
+				</div>      
+	    </div>		        
+  	</form>
 	</div><!-- /#register -->
 
 

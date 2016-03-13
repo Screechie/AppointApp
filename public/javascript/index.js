@@ -106,8 +106,8 @@ $(function() {
 			'<br>',
 
 			'<div class="alert alert-dismissible alert-success col-md-6 col-md-offset-3">',
-				'<button type="button" class="close" data-dismiss="alert">&times;</button>',
-				'<strong>Welcome </strong>to the patients login area! New patients register <a href="#" class="alert-link">here </a>',
+				'<button type="button" class="close" data-dismiss="alert"></button>',
+				'<center><strong>Welcome </strong>to the patients login area! New patients register <a href="#" class="alert-link">here </a></center>',
 			'</div>',
 
 			'<br>',
@@ -179,8 +179,8 @@ $(function() {
 			'<br>',
 
 			'<div class="alert alert-dismissible alert-warning col-md-6 col-md-offset-3">',
-				'<button type="button" class="close" data-dismiss="alert"> &times; </button>',
-				'<strong>Welcome </strong>to the doctors login area! New doctors register <a href="#" class="alert-link">here </a>',
+				'<button type="button" class="close" data-dismiss="alert"></button>',
+				'<center><strong>Welcome </strong>to the doctors login area! New doctors register <a href="#" class="alert-link">here </a></center>',
 			'</div>',
 
 			'<br>',
