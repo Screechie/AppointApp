@@ -18,6 +18,7 @@ $(function() {
 		this.sex = sex;
 		this.title = title;
 		this.specialty = specialty;
+		this.appointCount = appointCount; //Bind this count to a badge displayed on doctor dashboard
 	};
 
 	//==========================================View Templates=================================================
@@ -37,7 +38,7 @@ $(function() {
 				'<span class="icon-bar"></span>',
 				'<span class="icon-bar"></span>',
 				'</button>',
-				'<a class="navbar-brand" href="#index">AppointApp</a>',
+				'<a class="navbar-brand links" href="#index">AppointApp</a>',
 			'</div>',
 
 			'<!-- Collect the nav links, forms, and other content for toggling -->',
@@ -252,6 +253,7 @@ $(function() {
 	$('#container')
 			.append(html.headerTemplate())
 			.append(html.indexTemplate())
+			//.append(html.registerTemplate())
 			.append(html.patLogTemplate())
 			.append(html.docLogTemplate());
 
