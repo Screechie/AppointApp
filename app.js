@@ -14,6 +14,9 @@ app.use('/public',express.static(path.join(root, '/public')));
 // parse application/json
 app.use(bodyParser.json());
 
+var url = request.url;
+console.log("URL: "+url);
+
 //Get Index
 app.get('/index', function(req, res){	
 	//Lookup using res.render() and research the difference
