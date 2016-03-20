@@ -1,5 +1,10 @@
 $(function() {
 
+		window.addEventListener("hashchange", function(){
+			console.log(location.hash);
+
+	});
+
 	//Create div with class container for bootstrap content
 	$('<div>', {
 								"class": "container",
@@ -9,17 +14,17 @@ $(function() {
 
 	var html = {};
 
-	var Doctor = function(){
-		//Grab variables from form
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.username = username;
-		this.dob = dob;
-		this.sex = sex;
-		this.title = title;
-		this.specialty = specialty;
-		this.appointCount = appointCount; //Bind this count to a badge displayed on doctor dashboard
-	};
+	// var Doctor = function(firstName,.....){
+	// 	//Grab variables from form
+	// 	this.firstName = firstName;
+	// 	this.lastName = lastName;
+	// 	this.username = username;
+	// 	this.dob = dob;
+	// 	this.sex = sex;
+	// 	this.title = title;//Dr.
+	// 	this.specialty = specialty;
+	// 	this.appointCount = appointCount; //Bind this count to a badge displayed on doctor dashboard
+	// };
 
 	//==========================================View Templates=================================================
 
@@ -107,7 +112,7 @@ $(function() {
 
 			'<div class="alert alert-dismissible alert-success col-md-6 col-md-offset-3">',
 				'<button type="button" class="close" data-dismiss="alert"></button>',
-				'<center><strong>Welcome </strong>to the patients login area! New patients register <a href="#" class="alert-link">here </a></center>',
+				'<center><strong>Welcome </strong>to the patients login area! New patients register <a href="#register" class="alert-link">here </a></center>',
 			'</div>',
 
 			'<br>',
@@ -180,7 +185,7 @@ $(function() {
 
 			'<div class="alert alert-dismissible alert-warning col-md-6 col-md-offset-3">',
 				'<button type="button" class="close" data-dismiss="alert"></button>',
-				'<center><strong>Welcome </strong>to the doctors login area! New doctors register <a href="#" class="alert-link">here </a></center>',
+				'<center><strong>Welcome </strong>to the doctors login area! New doctors register <a href="#register" class="alert-link">here </a></center>',
 			'</div>',
 
 			'<br>',
@@ -276,5 +281,7 @@ $(function() {
 				$(pageId).show();
 
 	})
+
+
 
 });
